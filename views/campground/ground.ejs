@@ -1,0 +1,26 @@
+<% include ../partials/header %>
+
+<div class=container>
+	<header class="jumbotron">
+		<div class="container">
+			<h1>Choose which you want</h1>
+			<a class="btn btn-primary btn-lg" href="/ground/new"> add...</a>
+		</div>
+	</header>
+
+	<div class="row text-center" style="display:flex; flex-wrap: wrap">
+		<% camp.forEach(function(num){ %>
+			<div class="col-md-3 col-sm-6">
+				<div class="thumbnail">
+					<img src="<%= num.img %>">
+					<a href="/ground/<%= num._id %>" class="btn btn-primary">more</a>
+					<div class="caption">
+						<p><%= num.host %></p>
+					</div>
+				</div>
+			</div>
+		<% }) %>
+
+	</div>
+</div>
+<% include ../partials/footer %>
